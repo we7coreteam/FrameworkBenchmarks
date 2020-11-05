@@ -1,0 +1,53 @@
+{
+  "framework": "rangine",
+  "tests": [
+    {
+      "default": {
+        "json_url": "/json",
+        "db_url": "/db",
+        "query_url": "/queries/",
+        "fortune_url": "/fortunes",
+        "update_url": "/updates/",
+        "plaintext_url": "/plaintext",
+        "port": 8080,
+        "approach": "Realistic",
+        "classification": "Fullstack",
+        "database": "MySQL",
+        "framework": "rangine",
+        "language": "PHP",
+        "flavor": "PHP7",
+        "orm": "Full",
+        "platform": "swoole",
+        "webserver": "nginx",
+        "os": "Linux",
+        "database_os": "Linux",
+        "display_name": "rangine",
+        "notes": "",
+        "versus": "swoole"
+      },
+      "fpm": {
+        "json_url": "/json",
+        "db_url": "/db",
+        "query_url": "/queries/",
+        "fortune_url": "/fortunes",
+        "update_url": "/updates/",
+        "plaintext_url": "/plaintext",
+        "port": 8080,
+        "approach": "Realistic",
+        "classification": "Fullstack",
+        "database": "MySQL",
+        "framework": "rangine",
+        "language": "PHP",
+        "flavor": "None",
+        "orm": "Full",
+        "platform": "FPM/FastCGI",
+        "webserver": "none",
+        "os": "Linux",
+        "database_os": "Linux",
+        "display_name": "rangine-fpm",
+        "notes": "",
+        "versus": "None"
+      }
+    }
+  ]
+}
