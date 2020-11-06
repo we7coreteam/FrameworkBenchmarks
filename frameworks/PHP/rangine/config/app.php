@@ -52,6 +52,6 @@ return [
 		]
 	],
 	'session' => [
-		'auto_start' => true
+		'auto_start' => false
 	]
 ];
