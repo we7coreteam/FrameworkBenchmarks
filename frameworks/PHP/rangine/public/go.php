@@ -68,11 +68,11 @@ class Server extends \W7\Fpm\Server\Server {
 		$dispatcher->getMiddlewareMapping()->addBeforeMiddleware(SessionMiddleware::class);
 		$dispatcher->setRouterDispatcher(RouteDispatcher::getDispatcherWithRouteMapping(RouteMapping::class, $this->getType()));
 
-		App::getApp()->getContainer()->singleton(EventDispatcherInterface::class)->dispatch(ServerEvent::ON_USER_BEFORE_REQUEST, [$request, $response, $this->getType()]);
+		//App::getApp()->getContainer()->singleton(EventDispatcherInterface::class)->dispatch(ServerEvent::ON_USER_BEFORE_REQUEST, [$request, $response, $this->getType()]);
 
 		$response = $dispatcher->dispatch($request, $response);
 
-		App::getApp()->getContainer()->singleton(EventDispatcherInterface::class)->dispatch(ServerEvent::ON_USER_AFTER_REQUEST, [$request, $response, $this->getType()]);
+		//App::getApp()->getContainer()->singleton(EventDispatcherInterface::class)->dispatch(ServerEvent::ON_USER_AFTER_REQUEST, [$request, $response, $this->getType()]);
 
 		return $response;
 	}
