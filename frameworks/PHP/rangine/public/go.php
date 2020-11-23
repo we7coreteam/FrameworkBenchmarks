@@ -5,10 +5,8 @@ require_once dirname(__DIR__, 1) . '/vendor/autoload.php';
 use W7\App;
 use Spiral\RoadRunner\PSR7Client;
 use Spiral\Goridge\RelayInterface;
-use W7\Contract\Event\EventDispatcherInterface;
 use W7\Core\Route\RouteDispatcher;
 use W7\Core\Route\RouteMapping;
-use W7\Core\Server\ServerEvent;
 use W7\Fpm\Server\Dispatcher;
 use W7\Http\Session\Middleware\SessionMiddleware;
 use W7\Http\Message\Outputer\FpmResponseOutputer;
@@ -74,6 +72,7 @@ class Server extends \W7\Fpm\Server\Server {
 
 		//App::getApp()->getContainer()->singleton(EventDispatcherInterface::class)->dispatch(ServerEvent::ON_USER_AFTER_REQUEST, [$request, $response, $this->getType()]);
 
+		$response = $response->withHeader('Content-Type', $response->getHeader('Content-Type')[0] ?? '');
 		return $response;
 	}
 
