@@ -72,7 +72,11 @@ class Server extends \W7\Fpm\Server\Server {
 
 		//App::getApp()->getContainer()->singleton(EventDispatcherInterface::class)->dispatch(ServerEvent::ON_USER_AFTER_REQUEST, [$request, $response, $this->getType()]);
 
-		$response = $response->withHeader('Server', 'rangine')->withHeader('Content-Type', $response->getHeader('Content-Type')[0] ?? '');
+		$contentType = $response->getHeader('Content-Type')[0] ?? '';
+		if ($contentType == 'text/html') {
+			$contentType .= '; charset=utf-8';
+		}
+		$response = $response->withHeader('Server', 'rangine')->withHeader('Content-Type', $contentType);
 		return $response;
 	}
 
