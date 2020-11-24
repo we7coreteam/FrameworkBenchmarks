@@ -1,6 +1,7 @@
 http:
   address:         0.0.0.0:8080
   workers.command: "php ./public/go.php"
+  workers.pool.numWorkers: 10
 
 reload:
   # enable or disable file watcher
